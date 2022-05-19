@@ -12,6 +12,8 @@ class CosClient {
   constructor(config) {
     this.config = config;
     this.imageBedInstance = new COS({
+      Domain: config.domain,
+      UseAccelerate: config.useAccelerate || false,
       SecretId: secretId, // 身份识别ID
       SecretKey: secretKey, // 身份秘钥
     });
